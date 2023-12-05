@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import rotate
-
+from PIL import Image
 
 def show_image(image):
     plt.imshow(image)
@@ -13,9 +13,9 @@ def rotate_image(image, angle):
     return rotatedImage
 
 
-def scaling(image, k):
-    imageToArray = np.array(image)
-    scaled_image = imageToArray * k
-    # Normaliza los valores para que estén en el rango válido (0 a 255)
-    scaled_image = np.clip(scaled_image, 0, 255).astype(np.uint8)
+def scaling(image, scale):
+    scaled_image = image.resize((int(image.width * scale), int(image.height * scale)))
     return scaled_image
+
+
+
