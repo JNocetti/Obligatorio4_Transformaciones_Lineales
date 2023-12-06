@@ -1,11 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import rotate
+from PIL import Image
 
 
 def show_image(image):
     plt.imshow(image)
     plt.show()
+
+
+def svd(image):
+    imageToArray = np.array(image)
+    U, S, V = np.linalg.svd(imageToArray, full_matrices=False)
+    return U, S, V
+
+
+def compress_image(U, S, V, k):
+    compressed_image = np.dot(U[:, :k], np.dot(np.diag(S[:k]), V[:k, :]))
+    return compressed_image
+
 
 def rotate_image(image, angle):
     imageToArray = np.array(image)
@@ -13,9 +26,9 @@ def rotate_image(image, angle):
     return rotatedImage
 
 
-def scaling(image, k):
-    imageToArray = np.array(image)
-    scaled_image = imageToArray * k
-    # Normaliza los valores para que estén en el rango válido (0 a 255)
-    scaled_image = np.clip(scaled_image, 0, 255).astype(np.uint8)
+def scaling(image, scale):
+    scaled_image = image.resize(
+        (int(image.width * scale), int(image.height * scale)))
     return scaled_image
+
+

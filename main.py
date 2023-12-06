@@ -7,7 +7,10 @@ image = Image.open('images/bully.jpg')
 
 rotatedImage = utils.rotate_image(image, 60)
 
-scaledImage = utils.scaling(image, (0.5))
+scaledImage = utils.scaling(image, (10))
 
-#utils.show_image(rotatedImage)
+shearedImage = utils.shearing(image, 1,2)
+
+utils.show_image(rotatedImage)
 utils.show_image(scaledImage)
+utils.show_image(shearedImage)
