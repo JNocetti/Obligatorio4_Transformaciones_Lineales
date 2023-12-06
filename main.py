@@ -9,8 +9,6 @@ rotatedImage = utils.rotate_image(image, 60)
 
 scaledImage = utils.scaling(image, (10))
 
-shearedImage = utils.shearing(image, 1,2)
 
 utils.show_image(rotatedImage)
 utils.show_image(scaledImage)
-utils.show_image(shearedImage)
