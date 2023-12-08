@@ -6,8 +6,9 @@ from skimage import io
 from skimage import transform as tf
 from skimage.color import rgb2gray
 
-def show_image(image):
+def show_image(image, tittle):
     plt.imshow(image,"gray")
+    plt.title(tittle)
     plt.show()
 
 
@@ -31,9 +32,9 @@ def rotate_image(image, angle):
     return rotatedImage
 
 
-def scaling(image, scale):
+def scaling(image, k):
     scaled_image = image.resize(
-        (int(image.width * scale), int(image.height * scale)))
+        (int(image.width * k), int(image.height * k)))
     return scaled_image
 
 
