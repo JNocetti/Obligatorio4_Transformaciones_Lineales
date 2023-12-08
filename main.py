@@ -9,6 +9,7 @@ rotatedImage = utils.rotate_image(image, 60)
 
 scaledImage = utils.scaling(image, (10))
 
+
 shearedImage = utils.shearing(image, (1))
 
 
@@ -23,3 +24,5 @@ compressImage = utils.compress_image(image, 2)
 print(compressImage)
 
 utils.show_image(compressImage)
+
+
