@@ -13,6 +13,7 @@ scaledImage = utils.scaling(image, (10))
 scaledImage2 = utils.scaling(image, (20))
 
 
+
 shearedImage = utils.shearing(image, (1))
 shearedImage2 = utils.shearing(image, (100))
 
@@ -28,8 +29,8 @@ utils.show_image(shearedImage, "Imagen con shearing 1")
 utils.show_image(shearedImage2, "Imagen con shearing 100")
 
 
-svdImage = utils.svd(image)
 
+svdImage = utils.svd(image)
 
 compressImage = utils.compress_image(image, 200)
 utils.show_image(compressImage, "Imagen comprimida con k = 200")
@@ -39,3 +40,4 @@ compressImage = utils.compress_image(image, 2)
 utils.show_image(compressImage, "Imagen comprimida con k = 2")
 compressImage = utils.compress_image(image, 1)
 utils.show_image(compressImage, "Imagen comprimida con k = 1")
+
